@@ -14,7 +14,7 @@ const NavBar = () => {
                             <li key = {name} className = "group">
                                 <a href = {link}>
                                     <span>{name}</span>
-                                    <span></span>
+                                    <span className = "underline" />
                                 </a>
                             </li>
                         ))}

@@ -204,8 +204,8 @@ const expLogos = [
 
 const educationCards = [
     {
-        imgPath: "/images/exp1.png",
-        logoPath: "/images/logo1.png",
+        imgPath: "/images/UIUC-full.png",
+        logoPath: "/images/UIUCLogo.svg",
         title: "University of Illinois Urbana-Champaign",
         date: "August 2025 - Present",
         responsibilities: [
@@ -215,8 +215,8 @@ const educationCards = [
         ],
     },
     {
-        imgPath: "/images/exp2.png",
-        logoPath: "/images/logo2.png",
+        imgPath: "/images/LMU-full.png",
+        logoPath: "/images/LMULogo.svg",
         title: "Loyola Marymount University",
         date: "August 2020 - May 2024",
         responsibilities: [
@@ -229,12 +229,12 @@ const educationCards = [
 
 const educationLogos = [
     {
-        name: "logo1",
-        imgPath: "/images/logo1.png",
+        name: "UIUCLogo",
+        imgPath: "/images/UIUCLogo.svg",
     },
     {
-        name: "logo2",
-        imgPath: "/images/logo2.png",
+        name: "LMULogo",
+        imgPath: "/images/LMULogo.svg",
     },
 ];
 

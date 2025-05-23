@@ -82,8 +82,16 @@ const Experience = () => {
 
                             {/* Text */}
                             <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                                <div className="timeline-logo">
-                                    <img src={card.logoPath} alt="logo" />
+                                <div className="timeline-logo flex-shrink-0">
+                                    <img
+                                        src={card.logoPath}
+                                        alt="logo"
+                                        style = {{
+                                            width: card.logoSize ?? 48,
+                                            height: card.logoSize ?? 48,
+                                        }}
+                                        className = "object-contain"
+                                    />
                                 </div>
                                 <div>
                                     <h1 className="font-semibold text-3xl">{card.title}</h1>

@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { expCards } from "../constants";
+import { educationCards} from "../constants";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
 
@@ -60,7 +61,7 @@ const Experience = () => {
         >
             <div className="w-full h-full md:px-20 px-5">
                 <TitleHeader
-                    title="Professional Work Experience"
+                    title="Education and Experience"
                     sub="My Career Overview"
                 />
                 <div className="mt-32 relative">

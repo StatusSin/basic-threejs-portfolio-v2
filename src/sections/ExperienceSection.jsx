@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { expCards } from "../constants";
+import { expCards, educationCards } from "../constants";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
 
@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
     useGSAP(() => {
+        /* Card reveal animation */
         gsap.utils.toArray(".timeline-card").forEach((card) => {
             gsap.from(card, {
                 xPercent: -100,
@@ -24,21 +25,25 @@ const Experience = () => {
             });
         });
 
-        gsap.to(".timeline", {
-            transformOrigin: "bottom bottom",
-            ease: "power1.inOut",
-            scrollTrigger: {
-                trigger: ".timeline",
-                start: "top center",
-                end: "70% center",
-                onUpdate: (self) => {
-                    gsap.to(".timeline", {
-                        scaleY: 1 - self.progress,
-                    });
+        /* Independent timeline shrink animations for education & experience */
+        [".timeline-edu", ".timeline-exp"].forEach((selector) => {
+            gsap.to(selector, {
+                transformOrigin: "bottom bottom",
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    trigger: selector,
+                    start: "top center",
+                    end: "70% center",
+                    onUpdate: (self) => {
+                        gsap.to(selector, {
+                            scaleY: 1 - self.progress,
+                        });
+                    },
                 },
-            },
+            });
         });
 
+        /* Text fade‑in */
         gsap.utils.toArray(".expText").forEach((text) => {
             gsap.from(text, {
                 opacity: 0,
@@ -50,64 +55,71 @@ const Experience = () => {
                     start: "top 60%",
                 },
             });
-        }, "<");
+        });
     }, []);
 
-    return (
-        <section
-            id="experience"
-            className="flex-center md:mt-40 mt-20 section-padding xl:px-0"
-        >
-            <div className="w-full h-full md:px-20 px-5">
-                <TitleHeader
-                    title="Education and Experience"
-                    sub="My Career Overview"
-                />
-                <div className="mt-32 relative">
-                    <div className="relative z-50 xl:space-y-32 space-y-10">
-                        {expCards.map((card) => (
-                            <div key={card.title} className="exp-card-wrapper">
-                                <div className="xl:w-2/6">
-                                    <GlowCard card={card}>
-                                        <div>
-                                            <img src={card.imgPath} alt="exp-img" />
-                                        </div>
-                                    </GlowCard>
+    const renderCards = (cards, timelineClass) => (
+        <div className="relative z-50 xl:space-y-32 space-y-10">
+            {cards.map((card) => (
+                <div key={card.title} className="exp-card-wrapper">
+                    {/* Card on the left */}
+                    <div className="xl:w-2/6">
+                        <GlowCard card={card}>
+                            <div>
+                                <img src={card.imgPath} alt={`${card.title} image`} />
+                            </div>
+                        </GlowCard>
+                    </div>
+
+                    {/* Details on the right */}
+                    <div className="xl:w-4/6">
+                        <div className="flex items-start">
+                            {/* Timeline */}
+                            <div className="timeline-wrapper">
+                                <div className={`timeline ${timelineClass}`} />
+                                <div className="gradient-line w-1 h-full" />
+                            </div>
+
+                            {/* Text */}
+                            <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
+                                <div className="timeline-logo">
+                                    <img src={card.logoPath} alt="logo" />
                                 </div>
-                                <div className="xl:w-4/6">
-                                    <div className="flex items-start">
-                                        <div className="timeline-wrapper">
-                                            <div className="timeline" />
-                                            <div className="gradient-line w-1 h-full" />
-                                        </div>
-                                        <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                                            <div className="timeline-logo">
-                                                <img src={card.logoPath} alt="logo" />
-                                            </div>
-                                            <div>
-                                                <h1 className="font-semibold text-3xl">{card.title}</h1>
-                                                <p className="my-5 text-white-50">
-                                                    ️{card.date}
-                                                </p>
-                                                <p className="text-[#839CB5] italic">
-                                                    Responsibilities
-                                                </p>
-                                                <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
-                                                    {card.responsibilities.map(
-                                                        (responsibility, index) => (
-                                                            <li key={index} className="text-lg">
-                                                                {responsibility}
-                                                            </li>
-                                                        )
-                                                    )}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div>
+                                    <h1 className="font-semibold text-3xl">{card.title}</h1>
+                                    <p className="my-5 text-white-50">{card.date}</p>
+                                    <p className="text-[#839CB5] italic">Highlights</p>
+                                    <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
+                                        {card.responsibilities.map((resp, i) => (
+                                            <li key={i} className="text-lg">
+                                                {resp}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
+                </div>
+            ))}
+        </div>
+    );
+
+    return (
+        <section id="experience" className="flex-center md:mt-40 mt-20 section-padding xl:px-0">
+            <div className="w-full h-full md:px-20 px-5">
+                <TitleHeader title="Education and Experience" sub="My Career Overview" />
+
+                {/* ---------- Education ---------- */}
+                <div className="education-section mt-32 relative">
+                    <h2 className="font-semibold text-4xl mb-10">Education</h2>
+                    {renderCards(educationCards, "timeline-edu")}
+                </div>
+
+                {/* ---------- Professional Experience ---------- */}
+                <div className="experience-section mt-32 relative">
+                    <h2 className="font-semibold text-4xl mb-10">Professional Experience</h2>
+                    {renderCards(expCards, "timeline-exp")}
                 </div>
             </div>
         </section>

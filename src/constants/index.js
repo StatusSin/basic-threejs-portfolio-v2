@@ -147,8 +147,8 @@ const techStackIcons = [
 
 const expCards = [
     {
-        review:
-            "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+        company:
+            "Change Field",
         imgPath: "/images/exp1.png",
         logoPath: "/images/logo1.png",
         logoSize: 48,
@@ -161,8 +161,8 @@ const expCards = [
         ],
     },
     {
-        review:
-            "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+        company:
+            "Change Field",
         imgPath: "/images/exp2.png",
         logoPath: "/images/logo2.png",
         logoSize: 48,
@@ -175,31 +175,30 @@ const expCards = [
         ],
     },
     {
-        review:
-            "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+        company:
+            "Electronic Arts",
         imgPath: "/images/exp3.png",
         logoPath: "/images/logo3.png",
         logoSize: 48,
-        title: "React Native Developer",
-        date: "March 2019 - May 2020",
+        title: "Software Engineer Intern",
+        date: "August 2021 - December 2021",
         responsibilities: [
-            "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-            "Improved app performance and user experience through code optimization and testing.",
-            "Coordinated with the product team to implement features based on feedback.",
+            ".",
+            ".",
+            ".",
         ],
     },
     {
-        review:
-            "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+        company:
+            "Inhabitr",
         imgPath: "/images/inhabitr-full.png",
         logoPath: "/images/inhabitrLogo.png",
         logoSize: 48,
         title: "Software Engineer Intern",
         date: "June 2021 - August 2021",
         responsibilities: [
-            "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-            "Improved app performance and user experience through code optimization and testing.",
-            "Coordinated with the product team to implement features based on feedback.",
+            "Designed SQL model to categorize over 500 furniture SKUs and accurately track stock availability.",
+            "Devised and pitched concept to expand into student rental market to management team.",
         ],
     },
 ];

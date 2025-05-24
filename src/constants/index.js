@@ -166,7 +166,7 @@ const expCards = [
         imgPath: "/images/exp2.png",
         logoPath: "/images/logo2.png",
         logoSize: 48,
-        title: "Full Stack Developer",
+        title: "Full Stack Engineer",
         date: "June 2020 - December 2023",
         responsibilities: [
             "Led the development of Docker's web applications, focusing on scalability.",
@@ -188,6 +188,20 @@ const expCards = [
             "Coordinated with the product team to implement features based on feedback.",
         ],
     },
+    {
+        review:
+            "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+        imgPath: "/images/inhabitr-full.png",
+        logoPath: "/images/inhabitrLogo.png",
+        logoSize: 48,
+        title: "Software Engineer Intern",
+        date: "June 2021 - August 2021",
+        responsibilities: [
+            "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
+            "Improved app performance and user experience through code optimization and testing.",
+            "Coordinated with the product team to implement features based on feedback.",
+        ],
+    },
 ];
 
 const expLogos = [
@@ -202,6 +216,10 @@ const expLogos = [
     {
         name: "logo3",
         imgPath: "/images/logo3.png",
+    },
+    {
+        name: "logo4",
+        imgPath: "/images/inhabitrLogo.png",
     },
 ];
 

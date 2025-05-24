@@ -147,7 +147,7 @@ const techStackIcons = [
 
 const expCards = [
     {
-        company:
+        location:
             "Change Field",
         imgPath: "/images/exp1.png",
         logoPath: "/images/logo1.png",
@@ -161,7 +161,7 @@ const expCards = [
         ],
     },
     {
-        company:
+        location:
             "Change Field",
         imgPath: "/images/exp2.png",
         logoPath: "/images/logo2.png",
@@ -175,25 +175,24 @@ const expCards = [
         ],
     },
     {
-        company:
-            "Electronic Arts",
-        imgPath: "/images/exp3.png",
-        logoPath: "/images/logo3.png",
-        logoSize: 48,
+        location:
+            "Remote",
+        imgPath: "/images/EA-full.png",
+        logoPath: "/images/EALogo.png",
+        logoSize: 70,
         title: "Software Engineer Intern",
         date: "August 2021 - December 2021",
         responsibilities: [
-            ".",
-            ".",
-            ".",
+            "Expanded functionality for multi-generational compatibility on Battlefield 2042 with C++ functions to decrease load on legacy systems.",
+            "Developed AI opponent behaviors in C++ and Lua for Madden NFL 23.",
         ],
     },
     {
-        company:
-            "Inhabitr",
+        location:
+            "Remote",
         imgPath: "/images/inhabitr-full.png",
         logoPath: "/images/inhabitrLogo.png",
-        logoSize: 48,
+        logoSize: 58,
         title: "Software Engineer Intern",
         date: "June 2021 - August 2021",
         responsibilities: [

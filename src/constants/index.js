@@ -152,12 +152,11 @@ const expCards = [
         imgPath: "/images/CodeRevKids-full.png",
         logoPath: "/images/CodeRevKidsLogo.png",
         logoSize: 70,
-        title: "Frontend Developer",
-        date: "January 2023 - Present",
+        title: "Coding Instructor",
+        date: "July 2022 - August 2023",
         responsibilities: [
-            "Developed and maintained user-facing features for the Hostinger website.",
-            "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-            "Optimized web applications for maximum speed and scalability.",
+            "Trained over 100 students in Python, Java, C++ and Scratch.",
+            "Designed a teaching curriculum to effectively teach students of different backgrounds.",
         ],
     },
     {

@@ -222,6 +222,7 @@ const expLogos = [
 
 const educationCards = [
     {
+        gpa: "GPA: ",
         imgPath: "/images/UIUC-full.png",
         logoPath: "/images/UIUCLogo.svg",
         logoSize: 65,
@@ -234,15 +235,16 @@ const educationCards = [
         ],
     },
     {
+        gpa: "GPA: 3.94 / 4.0",
         imgPath: "/images/LMU-full.png",
         logoPath: "/images/LMULogo.svg",
         logoSize: 68,
         title: "Loyola Marymount University",
         date: "August 2020 - May 2024",
         responsibilities: [
-            "LMU 1.",
-            "LMU 2.",
-            "LMU 3.",
+            "Conducted research using LLaMA and GPT LLM APIs in python to create a narrative agent capable of generating an interactive world around a base storyline.",
+            "Built reinforcement learning and deep Q-learning agents in python to compete in tournament as final project of Artificial Intelligence course (CMSI 4320). ",
+            "Developed Unity game using C# and Lua for Senior Capstone Project (CMSI 4071 - CMSI 4072)",
         ],
     },
 ];

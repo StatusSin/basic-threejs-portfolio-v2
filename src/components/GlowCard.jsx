@@ -22,7 +22,7 @@ const GlowCard = ({ card, children, index }) => {
             <div className = "glow"/>
             {children}
             <div className = "mb-5 mt-5">
-                <p className = "text-white-50 text-lg font-semibold">{card.location}</p>
+                <p className = "text-white-50 text-lg font-semibold">{card.location}{card.gpa}</p>
             </div>
         </div>
     )

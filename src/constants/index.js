@@ -29,7 +29,7 @@ const words = [
 ];
 
 const counterItems = [
-    { value: 15, suffix: "+", label: "Years of Experience" },
+    { value: 7, suffix: "+", label: "Years of Experience" },
     { value: 200, suffix: "+", label: "Satisfied Clients" },
     { value: 108, suffix: "+", label: "Completed Projects" },
     { value: 90, suffix: "%", label: "Client Retention Rate" },
@@ -148,10 +148,10 @@ const techStackIcons = [
 const expCards = [
     {
         location:
-            "Change Field",
-        imgPath: "/images/exp1.png",
-        logoPath: "/images/logo1.png",
-        logoSize: 48,
+            "Santa Monica, CA",
+        imgPath: "/images/CodeRevKids-full.png",
+        logoPath: "/images/CodeRevKidsLogo.png",
+        logoSize: 70,
         title: "Frontend Developer",
         date: "January 2023 - Present",
         responsibilities: [
@@ -162,16 +162,16 @@ const expCards = [
     },
     {
         location:
-            "Change Field",
-        imgPath: "/images/exp2.png",
-        logoPath: "/images/logo2.png",
-        logoSize: 48,
-        title: "Full Stack Engineer",
-        date: "June 2020 - December 2023",
+            "Burbank, CA",
+        imgPath: "/images/GothamCityLA-full.png",
+        logoPath: "/images/GothamCityLALogo.png",
+        logoSize: 70,
+        title: "Full Stack Engineer (contract)",
+        date: "June 2022 - July 2022",
         responsibilities: [
-            "Led the development of Docker's web applications, focusing on scalability.",
-            "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-            "Contributed to open-source projects that were used with the Docker ecosystem.",
+            "Built a full-stack web application using React, Node.js, and Express.",
+            "Streamlined server architecture to optimize performance and scalability.",
+            "Used three.js, gsap, and react-three-fiber to create an interactive and aesthetically pleasing experience.",
         ],
     },
     {

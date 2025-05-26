@@ -30,9 +30,9 @@ const words = [
 
 const counterItems = [
     { value: 7, suffix: "+", label: "Years of Experience" },
-    { value: 47, suffix: "+", label: "Completed Projects" },
-    { value: 200, suffix: "+", label: "" },
-    { value: 90, suffix: "%", label: "" },
+    { value: 50, suffix: "+", label: "Completed Projects" },
+    { value: 2, suffix: "", label: "Certificates" },
+    { value: 30, suffix: "+", label: "Languages" },
 ];
 
 const logoIconsList = [

@@ -9,12 +9,12 @@ import GlowCard from "../components/GlowCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const getTimelineGradient = (cards) => {
-    if (cards.length === 0) return "transparent";
+    if (!cards?.length) return "transparent";
     if (cards.length === 1) return cards[0].timelineColor;
 
     const step = 100 / (cards.length - 1);
     const stops = cards.map((c, i) => `${c.timelineColor} ${i * step}%`);
-    return `linear-gradient(0deg, ${stops.join(", ")})`;
+    return `linear-gradient(to bottom, ${stops.join(", ")})`;
 };
 
 const eduGradient = getTimelineGradient(educationCards);

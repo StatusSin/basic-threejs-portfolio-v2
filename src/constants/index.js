@@ -154,6 +154,7 @@ const expCards = [
         logoSize: 70,
         title: "Coding Instructor",
         date: "July 2022 - August 2023",
+        timelineColor: "#62e0ff",
         responsibilities: [
             "Trained over 100 students in Python, Java, C++ and Scratch.",
             "Designed a teaching curriculum to effectively teach students of different backgrounds.",
@@ -167,6 +168,7 @@ const expCards = [
         logoSize: 70,
         title: "Full Stack Engineer (contract)",
         date: "June 2022 - July 2022",
+        timelineColor: "#ffe562",
         responsibilities: [
             "Built a full-stack web application using React, Node.js, and Express.",
             "Streamlined server architecture to optimize performance and scalability.",
@@ -181,6 +183,7 @@ const expCards = [
         logoSize: 70,
         title: "Software Engineer Intern",
         date: "August 2021 - December 2021",
+        timelineColor: "#ff3e3e",
         responsibilities: [
             "Expanded functionality for multi-generational compatibility on Battlefield 2042 with C++ functions to decrease load on legacy systems.",
             "Developed AI opponent behaviors in C++ and Lua for Madden NFL 23.",
@@ -194,6 +197,7 @@ const expCards = [
         logoSize: 58,
         title: "Software Engineer Intern",
         date: "June 2021 - August 2021",
+        timelineColor: "#ffc062",
         responsibilities: [
             "Designed SQL model to categorize over 500 furniture SKUs and accurately track stock availability.",
             "Devised and pitched concept to expand into student rental market to management team.",
@@ -229,6 +233,7 @@ const educationCards = [
         title: "University of Illinois Urbana-Champaign",
         subtitle: "Master of Science in Computer Science",
         date: "August 2025 - Present",
+        timelineColor: "#ff6210",
         responsibilities: [
             "UIUC 1.",
             "UIUC 2.",
@@ -243,6 +248,7 @@ const educationCards = [
         title: "Loyola Marymount University",
         subtitle: "Bachelor of Science in Computer Science",
         date: "August 2020 - May 2024",
+        timelineColor: "#62e0ff",
         responsibilities: [
             "Conducted research using LLaMA and GPT LLM APIs in python to create a narrative agent capable of generating an interactive world around a base storyline.",
             "Built reinforcement learning and deep Q-learning agents in python to compete in tournament as final project of Artificial Intelligence course (CMSI 4320). ",

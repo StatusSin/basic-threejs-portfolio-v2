@@ -8,6 +8,18 @@ import GlowCard from "../components/GlowCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const getTimelineGradient = (cards) => {
+    if (cards.length === 0) return "transparent";
+    if (cards.length === 1) return cards[0].timelineColor;
+
+    const step = 100 / (cards.length - 1);
+    const stops = cards.map((c, i) => `${c.timelineColor} ${i * step}%`);
+    return `linear-gradient(0deg, ${stops.join(", ")})`;
+};
+
+const eduGradient = getTimelineGradient(educationCards);
+const expGradient = getTimelineGradient(expCards);
+
 const Experience = () => {
     useGSAP(() => {
         /* Card reveal animation */
@@ -58,7 +70,7 @@ const Experience = () => {
         });
     }, []);
 
-    const renderCards = (cards, timelineClass) => (
+    const renderCards = (cards, timelineClass, gradient) => (
         <div className="relative z-50 xl:space-y-32 space-y-10">
             {cards.map((card) => (
                 <div key={card.title} className="exp-card-wrapper">
@@ -77,7 +89,7 @@ const Experience = () => {
                             {/* Timeline */}
                             <div className="timeline-wrapper">
                                 <div className={`timeline ${timelineClass}`} />
-                                <div className="gradient-line w-1 h-full" />
+                                <div className="gradient-line w-1 h-full" style = {{ background: gradient }}/>
                             </div>
 
                             {/* Text */}
@@ -122,13 +134,13 @@ const Experience = () => {
                 {/* ---------- Education ---------- */}
                 <div className="education-section mt-32 relative">
                     <h2 className="font-semibold text-4xl mb-10">Education</h2>
-                    {renderCards(educationCards, "timeline-edu")}
+                    {renderCards(educationCards, "timeline-edu", eduGradient)}
                 </div>
 
                 {/* ---------- Professional Experience ---------- */}
                 <div className="experience-section mt-32 relative">
                     <h2 className="font-semibold text-4xl mb-10">Professional Experience</h2>
-                    {renderCards(expCards, "timeline-exp")}
+                    {renderCards(expCards, "timeline-exp", expGradient)}
                 </div>
             </div>
         </section>

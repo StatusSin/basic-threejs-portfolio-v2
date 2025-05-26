@@ -227,6 +227,7 @@ const educationCards = [
         logoPath: "/images/UIUCLogo.svg",
         logoSize: 65,
         title: "University of Illinois Urbana-Champaign",
+        subtitle: "Master of Science in Computer Science",
         date: "August 2025 - Present",
         responsibilities: [
             "UIUC 1.",
@@ -240,6 +241,7 @@ const educationCards = [
         logoPath: "/images/LMULogo.svg",
         logoSize: 68,
         title: "Loyola Marymount University",
+        subtitle: "Bachelor of Science in Computer Science",
         date: "August 2020 - May 2024",
         responsibilities: [
             "Conducted research using LLaMA and GPT LLM APIs in python to create a narrative agent capable of generating an interactive world around a base storyline.",

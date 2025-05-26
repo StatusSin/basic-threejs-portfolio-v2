@@ -8,7 +8,7 @@ import ExperienceSection from "./sections/ExperienceSection.jsx";
 const App = () => {
     return (
         <>
-            <NavBar />
+            <NavBar classname = "py-10"/>
             <Hero />
             <ShowcaseSection />
             <LogoSection />

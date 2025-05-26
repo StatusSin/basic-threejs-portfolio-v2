@@ -154,7 +154,7 @@ const expCards = [
         logoSize: 70,
         title: "Coding Instructor",
         date: "July 2022 - August 2023",
-        timelineColor: "#62e0ff",
+        timelineColor: "#40a2bb",
         responsibilities: [
             "Trained over 100 students in Python, Java, C++ and Scratch.",
             "Designed a teaching curriculum to effectively teach students of different backgrounds.",

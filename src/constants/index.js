@@ -75,12 +75,12 @@ const abilities = [
     {
         imgPath: "/images/seo.png",
         title: "Quality Focus",
-        desc: "Delivering high-quality results while maintaining attention to every detail.",
+        desc: "Developing high-quality work while maintaining attention to every detail.",
     },
     {
         imgPath: "/images/chat.png",
         title: "Reliable Communication",
-        desc: "Keeping you updated at every step to ensure transparency and clarity.",
+        desc: "Keeping transparency and clarity the forefront of project workflow.",
     },
     {
         imgPath: "/images/time.png",

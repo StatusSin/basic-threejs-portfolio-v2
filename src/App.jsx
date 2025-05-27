@@ -8,7 +8,7 @@ import ExperienceSection from "./sections/ExperienceSection.jsx";
 const App = () => {
     return (
         <>
-            <NavBar className="sticky" />
+            <NavBar />
             <Hero />
             <ShowcaseSection />
             <LogoSection />

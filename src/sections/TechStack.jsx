@@ -5,7 +5,10 @@ const TechStack = () => {
     return (
         <div id = "skills" className = "flex-center section-padding">
             <div>
-                <TitleHeader />
+                <TitleHeader
+                    title = "Tech Stacks"
+                    sub = "What I use"
+                />
             </div>
         </div>
     )

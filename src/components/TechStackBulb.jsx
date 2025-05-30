@@ -1,29 +1,34 @@
 import React, { useState, useMemo } from "react";
-import { techStackBulb as sampleData } from "../constants"; // adjust path as needed
 
-const TechStackBulb = ({ data = sampleData[0] }) => {
-    const { techStack, imgPath, stack, stackLogo } = data;
+/**
+ * Renders a single “bulb”  ➜ central button + orbiting tech-icons.
+ * Expects a `data` prop shaped like one element in `techStackBulb` from index.js.
+ */
+const TechStackBulb = ({ data }) => {
+    if (!data) return null;                // safety guard
+
+    const { techStack, imgPath, stack = [], stackLogo = [] } = data;
     const [open, setOpen] = useState(false);
 
-    // Pre‑compute the polar placement for satellites.
+    /** Pre-compute satellite positions (simple polar coordinates). */
     const satellites = useMemo(() => {
         const count = stack.length;
-        const radius = 110; // px distance from centre – tweak for spacing.
-        const startAngle = -90; // start at top.
+        const radius = 110;          // px from centre — tweak as you like
+        const startAngle = -90;      // start straight up
 
-        return stack.map((item, i) => {
+        return stack.map((label, i) => {
             const angle = startAngle + (360 / count) * i;
             return {
-                label: item,
+                label,
                 logo: stackLogo[i],
-                transform: `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`
+                transform: `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`,
             };
         });
     }, [stack, stackLogo]);
 
     return (
         <div className="relative flex-center w-80 h-80 select-none">
-            {/* Central circle */}
+            {/* central button */}
             <button
                 type="button"
                 aria-label={techStack}
@@ -33,23 +38,21 @@ const TechStackBulb = ({ data = sampleData[0] }) => {
                 }`}
                 style={{ boxShadow: open ? "0 0 20px rgba(217,236,255,.4)" : "none" }}
             >
-                {/* Logo */}
                 {imgPath && (
                     <img
                         src={imgPath}
-                        alt={techStack + " logo"}
+                        alt={`${techStack} logo`}
                         className="w-12 h-12 md:w-14 md:h-14 object-contain"
                     />
                 )}
-                {/* Name */}
                 <span className="font-semibold mt-2 md:mt-3 text-sm md:text-base uppercase tracking-wide">
           {techStack}
         </span>
-                {/* Reserve bottom gap for extra info */}
-                <span className="block mt-auto mb-4 text-xs opacity-0">placeholder</span>
+                {/* keeps height consistent */}
+                <span className="block mt-auto mb-4 text-xs opacity-0">.</span>
             </button>
 
-            {/* Satellite circles */}
+            {/* orbiting tech icons */}
             {satellites.map(({ label, logo, transform }, idx) => (
                 <div
                     key={idx}
@@ -61,7 +64,7 @@ const TechStackBulb = ({ data = sampleData[0] }) => {
                     {logo && (
                         <img
                             src={logo}
-                            alt={label + " logo"}
+                            alt={`${label} logo`}
                             className="w-8 h-8 md:w-10 md:h-10 object-contain"
                         />
                     )}

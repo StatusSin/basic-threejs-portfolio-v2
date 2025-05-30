@@ -89,6 +89,39 @@ const abilities = [
     },
 ];
 
+const educationCards = [
+    {
+        gpa: "GPA: ",
+        imgPath: "/images/UIUC-full.png",
+        logoPath: "/images/UIUCLogo.svg",
+        logoSize: 65,
+        title: "University of Illinois Urbana-Champaign",
+        subtitle: "Master of Science in Computer Science",
+        date: "August 2025 - Present",
+        timelineColor: "#ff6210",
+        responsibilities: [
+            "UIUC 1.",
+            "UIUC 2.",
+            "UIUC 3.",
+        ],
+    },
+    {
+        gpa: "GPA: 3.94 / 4.0",
+        imgPath: "/images/LMU-full.png",
+        logoPath: "/images/LMULogo.svg",
+        logoSize: 68,
+        title: "Loyola Marymount University",
+        subtitle: "Bachelor of Science in Computer Science",
+        date: "August 2020 - May 2024",
+        timelineColor: "#62e0ff",
+        responsibilities: [
+            "Conducted research using LLaMA and GPT LLM APIs in python to create a narrative agent capable of generating an interactive world around a base storyline.",
+            "Built reinforcement learning and deep Q-learning agents in python to compete in tournament as final project of Artificial Intelligence course (CMSI 4320). ",
+            "Developed Unity game using C# and Lua for Senior Capstone Project (CMSI 4071 - CMSI 4072)",
+        ],
+    },
+];
+
 const expCards = [
     {
         location:
@@ -148,40 +181,6 @@ const expCards = [
         ],
     },
 ];
-
-const educationCards = [
-    {
-        gpa: "GPA: ",
-        imgPath: "/images/UIUC-full.png",
-        logoPath: "/images/UIUCLogo.svg",
-        logoSize: 65,
-        title: "University of Illinois Urbana-Champaign",
-        subtitle: "Master of Science in Computer Science",
-        date: "August 2025 - Present",
-        timelineColor: "#ff6210",
-        responsibilities: [
-            "UIUC 1.",
-            "UIUC 2.",
-            "UIUC 3.",
-        ],
-    },
-    {
-        gpa: "GPA: 3.94 / 4.0",
-        imgPath: "/images/LMU-full.png",
-        logoPath: "/images/LMULogo.svg",
-        logoSize: 68,
-        title: "Loyola Marymount University",
-        subtitle: "Bachelor of Science in Computer Science",
-        date: "August 2020 - May 2024",
-        timelineColor: "#62e0ff",
-        responsibilities: [
-            "Conducted research using LLaMA and GPT LLM APIs in python to create a narrative agent capable of generating an interactive world around a base storyline.",
-            "Built reinforcement learning and deep Q-learning agents in python to compete in tournament as final project of Artificial Intelligence course (CMSI 4320). ",
-            "Developed Unity game using C# and Lua for Senior Capstone Project (CMSI 4071 - CMSI 4072)",
-        ],
-    },
-];
-
 
 const techStackBulb = [
     {
@@ -263,14 +262,14 @@ const socialImgs = [
 ];
 
 export {
-    words,
-    abilities,
-    logoIconsList,
-    counterItems,
-    expCards,
-    educationCards,
-    socialImgs,
-    techStackModels,
-    techStackBulb,
     navLinks,
+    words,
+    counterItems,
+    logoIconsList,
+    abilities,
+    educationCards,
+    expCards,
+    techStackBulb,
+    techStackModels,
+    socialImgs,
 };

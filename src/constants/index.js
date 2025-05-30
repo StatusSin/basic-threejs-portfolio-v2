@@ -217,6 +217,12 @@ const techStackBulb = [
             "MongoDB",
         ],
         stackLogo: [
+            "/images/java.svg",
+            "/images/nodejs.svg",
+            "/images/aws.svg",
+            "/images/azure.svg",
+            "/images/mysql.svg",
+            "/images/mongodb.svg",
         ]
     },
     {

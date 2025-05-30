@@ -112,7 +112,7 @@ const techStackImgs = [
     },
 ];
 
-const techStackIcons = [
+const techStackModels = [
     {
         name: "React Developer",
         modelPath: "/models/react_logo-transformed.glb",
@@ -347,7 +347,7 @@ export {
     educationLogos,
     testimonials,
     socialImgs,
-    techStackIcons,
+    techStackModels,
     techStackImgs,
     navLinks,
 };

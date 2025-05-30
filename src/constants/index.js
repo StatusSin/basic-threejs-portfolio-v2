@@ -205,6 +205,40 @@ const techStackBulb = [
             "/images/css.svg",
         ]
     },
+    {
+        techStack: "Backend",
+        imgPath: "/images/backend.svg",
+        stack: [
+            "Java",
+            "Node.js",
+            "AWS",
+            "Microsoft Azure",
+            "MySQL",
+            "MongoDB",
+        ],
+        stackLogo: [
+        ]
+    },
+    {
+        techStack: "Artificial Intelligence / Machine Learning",
+        imgPath: "/images/backend.svg",
+        stack: [
+            "Python",
+            "C, C++",
+            "PyTorch",
+            "Pandas",
+            "TensorFlow",
+            "Cuda",
+        ],
+        stackLogo: [
+            "/images/python.svg",
+            "/images/c.svg",
+            "/images/pytorch.svg",
+            "/images/pandas.svg",
+            "/images/tensorflow.svg",
+            "/images/cuda.svg",
+        ]
+    },
 ];
 
 const techStackModels = [

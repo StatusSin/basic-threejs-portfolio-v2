@@ -185,7 +185,7 @@ const expCards = [
 const techStackBulb = [
     {
         techStack: "Frontend",
-        imgPath: "",
+        imgPath: "/images/frontend.svg",
         stack: [
             "JavaScript",
             "HTML",

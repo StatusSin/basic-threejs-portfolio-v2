@@ -205,25 +205,6 @@ const expCards = [
     },
 ];
 
-const expLogos = [
-    {
-        name: "logo1",
-        imgPath: "/images/logo1.png",
-    },
-    {
-        name: "logo2",
-        imgPath: "/images/logo2.png",
-    },
-    {
-        name: "logo3",
-        imgPath: "/images/logo3.png",
-    },
-    {
-        name: "logo4",
-        imgPath: "/images/inhabitrLogo.png",
-    },
-];
-
 const educationCards = [
     {
         gpa: "GPA: ",
@@ -254,17 +235,6 @@ const educationCards = [
             "Built reinforcement learning and deep Q-learning agents in python to compete in tournament as final project of Artificial Intelligence course (CMSI 4320). ",
             "Developed Unity game using C# and Lua for Senior Capstone Project (CMSI 4071 - CMSI 4072)",
         ],
-    },
-];
-
-const educationLogos = [
-    {
-        name: "UIUCLogo",
-        imgPath: "/images/UIUCLogo.svg",
-    },
-    {
-        name: "LMULogo",
-        imgPath: "/images/LMULogo.svg",
     },
 ];
 
@@ -342,9 +312,7 @@ export {
     logoIconsList,
     counterItems,
     expCards,
-    expLogos,
     educationCards,
-    educationLogos,
     testimonials,
     socialImgs,
     techStackModels,

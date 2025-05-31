@@ -1,49 +1,48 @@
 import React, { useState, useMemo } from "react";
 
 /**
- * Blocked angular sector for satellites (degrees, CSS rotate direction – clockwise).
- * Change these two numbers if your SVG uses a different orientation.
- * Example here blocks 225° → 315° (a 90° slice – roughly the lower‑left quadrant if 0° is at the right‑hand side).
+ * TechStackBulb
+ * Satellites orbit around a central button, skipping the angular slice
+ * [blockedStart → blockedEnd] that you pass in with each data object.
+ * (Angles are CSS‑style: 0° is to the right, rotation is clockwise.)
  */
-const BLOCKED_START = 80;
-const BLOCKED_END   = 130;
-const BLOCKED_WIDTH = BLOCKED_END - BLOCKED_START; // = 90°
-const FULL_CIRCLE   = 360;
+const FULL_CIRCLE = 360;
 
-/**
- * Renders a single “bulb” ➜ central button + orbiting tech‑icons.
- * Expects a `data` prop shaped like one element in `techStackBulb` from index.js.
- */
 const TechStackBulb = ({ data }) => {
-    if (!data) return null; // safety guard
+    if (!data) return null;
 
-    const { techStack, imgPath, stack = [], stackLogo = [] } = data;
+    const {
+        techStack,
+        imgPath,
+        stack = [], // satellite labels
+        stackLogo = [], // satellite logos
+        // NEW ↓↓↓ – pull slice limits from index.js (fallback to previous default)
+        blockedStart = 80,
+        blockedEnd = 120,
+    } = data;
+
+    // width of the forbidden slice, normalised to 0‑360
+    const blockedWidth = (blockedEnd - blockedStart + FULL_CIRCLE) % FULL_CIRCLE;
+
     const [open, setOpen] = useState(false);
 
     /**
-     * Compute satellite positions, skipping the blocked angular slice.
-     * Distribution rule:
-     *   – Treat the 270° of allowed arc as one continuous ‘linear’ domain
-     *   – Map each satellite’s index evenly along that domain
-     *   – If a generated angle would fall inside the blocked slice, shift it forward by the slice width
+     * Memoised satellite layout so re‑computes only when dependencies change.
+     * Algorithm: map each satellite along the allowed arc (360 – blockedWidth)
+     * then shift anything at/after blockedStart by blockedWidth.
      */
     const satellites = useMemo(() => {
         const count = stack.length;
         if (!count) return [];
 
-        const radius = 110; // distance (px) from the centre – tweak as you wish
-        const allowedSpan = FULL_CIRCLE - BLOCKED_WIDTH; // 270°
-        const step = allowedSpan / count;               // equal slice per satellite
+        const radius = 110; // px distance from centre – tweak per design
+        const allowedSpan = FULL_CIRCLE - blockedWidth;
+        const step = allowedSpan / count;
 
         return stack.map((label, idx) => {
-            // 0° (CSS) is the point to the right ➜ we start there and move clockwise
             let angle = idx * step;
-
-            // If this angle would land inside the forbidden sector, hop over it
-            if (angle >= BLOCKED_START) {
-                angle += BLOCKED_WIDTH; // skip the 90° slice
-            }
-            angle %= FULL_CIRCLE; // keep it within 0‑359
+            if (angle >= blockedStart) angle += blockedWidth; // hop the gap
+            angle %= FULL_CIRCLE;
 
             const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`;
 
@@ -53,7 +52,7 @@ const TechStackBulb = ({ data }) => {
                 transform,
             };
         });
-    }, [stack, stackLogo]);
+    }, [stack, stackLogo, blockedStart, blockedWidth]);
 
     return (
         <div className="relative flex-center w-80 h-80 select-none">
@@ -77,7 +76,7 @@ const TechStackBulb = ({ data }) => {
                 <span className="font-semibold mt-2 md:mt-3 text-sm md:text-base uppercase tracking-wide">
           {techStack}
         </span>
-                {/* invisible dot keeps height consistent */}
+                {/* invisible spacer keeps vertical rhythm */}
                 <span className="block mt-auto mb-4 text-xs opacity-0">.</span>
             </button>
 

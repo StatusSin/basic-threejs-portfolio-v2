@@ -204,8 +204,8 @@ const techStackBulb = [
             "/images/threejs.svg",
             "/images/css.svg",
         ],
-        blockedStart: 225,
-        blockedEnd: 315,
+        blockedStart: 80,
+        blockedEnd: 130,
     },
     {
         techStack: "Backend",
@@ -216,6 +216,7 @@ const techStackBulb = [
             "AWS",
             "Microsoft Azure",
             "MySQL",
+            "PostgreSQL",
             "MongoDB",
         ],
         stackLogo: [
@@ -224,10 +225,11 @@ const techStackBulb = [
             "/images/aws.svg",
             "/images/azure.svg",
             "/images/mysql.svg",
+            "/images/postgresql.svg",
             "/images/mongodb.svg",
         ],
-        blockedStart: 225,
-        blockedEnd: 315,
+        blockedStart: 80,
+        blockedEnd: 130,
     },
     {
         techStack: "Artificial Intelligence / Machine Learning",
@@ -238,6 +240,7 @@ const techStackBulb = [
             "PyTorch",
             "Pandas",
             "TensorFlow",
+            "MLFlow",
             "Cuda",
         ],
         stackLogo: [
@@ -246,10 +249,11 @@ const techStackBulb = [
             "/images/pytorch.svg",
             "/images/pandas.svg",
             "/images/tensorflow.svg",
+            "/images/mlflow.svg",
             "/images/cuda.svg",
         ],
-        blockedStart: 225,
-        blockedEnd: 315,
+        blockedStart: 80,
+        blockedEnd: 130,
     },
 ];
 

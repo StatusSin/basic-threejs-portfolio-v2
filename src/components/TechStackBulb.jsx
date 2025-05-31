@@ -1,27 +1,56 @@
 import React, { useState, useMemo } from "react";
 
 /**
- * Renders a single “bulb”  ➜ central button + orbiting tech-icons.
+ * Blocked angular sector for satellites (degrees, CSS rotate direction – clockwise).
+ * Change these two numbers if your SVG uses a different orientation.
+ * Example here blocks 225° → 315° (a 90° slice – roughly the lower‑left quadrant if 0° is at the right‑hand side).
+ */
+const BLOCKED_START = 80;
+const BLOCKED_END   = 130;
+const BLOCKED_WIDTH = BLOCKED_END - BLOCKED_START; // = 90°
+const FULL_CIRCLE   = 360;
+
+/**
+ * Renders a single “bulb” ➜ central button + orbiting tech‑icons.
  * Expects a `data` prop shaped like one element in `techStackBulb` from index.js.
  */
 const TechStackBulb = ({ data }) => {
-    if (!data) return null;                // safety guard
+    if (!data) return null; // safety guard
 
     const { techStack, imgPath, stack = [], stackLogo = [] } = data;
     const [open, setOpen] = useState(false);
 
-    /** Pre-compute satellite positions (simple polar coordinates). */
+    /**
+     * Compute satellite positions, skipping the blocked angular slice.
+     * Distribution rule:
+     *   – Treat the 270° of allowed arc as one continuous ‘linear’ domain
+     *   – Map each satellite’s index evenly along that domain
+     *   – If a generated angle would fall inside the blocked slice, shift it forward by the slice width
+     */
     const satellites = useMemo(() => {
         const count = stack.length;
-        const radius = 110;          // px from centre — tweak as you like
-        const startAngle = -90;      // start straight up
+        if (!count) return [];
 
-        return stack.map((label, i) => {
-            const angle = startAngle + (360 / count) * i;
+        const radius = 110; // distance (px) from the centre – tweak as you wish
+        const allowedSpan = FULL_CIRCLE - BLOCKED_WIDTH; // 270°
+        const step = allowedSpan / count;               // equal slice per satellite
+
+        return stack.map((label, idx) => {
+            // 0° (CSS) is the point to the right ➜ we start there and move clockwise
+            let angle = idx * step;
+
+            // If this angle would land inside the forbidden sector, hop over it
+            if (angle >= BLOCKED_START) {
+                angle += BLOCKED_WIDTH; // skip the 90° slice
+            }
+            angle %= FULL_CIRCLE; // keep it within 0‑359
+
+            const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`;
+
             return {
                 label,
-                logo: stackLogo[i],
-                transform: `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`,
+                logo: stackLogo[idx],
+                transform,
             };
         });
     }, [stack, stackLogo]);
@@ -48,7 +77,7 @@ const TechStackBulb = ({ data }) => {
                 <span className="font-semibold mt-2 md:mt-3 text-sm md:text-base uppercase tracking-wide">
           {techStack}
         </span>
-                {/* keeps height consistent */}
+                {/* invisible dot keeps height consistent */}
                 <span className="block mt-auto mb-4 text-xs opacity-0">.</span>
             </button>
 

@@ -203,7 +203,9 @@ const techStackBulb = [
             "/images/gsap.svg",
             "/images/threejs.svg",
             "/images/css.svg",
-        ]
+        ],
+        blockedStart: 225,
+        blockedEnd: 315,
     },
     {
         techStack: "Backend",
@@ -223,7 +225,9 @@ const techStackBulb = [
             "/images/azure.svg",
             "/images/mysql.svg",
             "/images/mongodb.svg",
-        ]
+        ],
+        blockedStart: 225,
+        blockedEnd: 315,
     },
     {
         techStack: "Artificial Intelligence / Machine Learning",
@@ -243,7 +247,9 @@ const techStackBulb = [
             "/images/pandas.svg",
             "/images/tensorflow.svg",
             "/images/cuda.svg",
-        ]
+        ],
+        blockedStart: 225,
+        blockedEnd: 315,
     },
 ];
 

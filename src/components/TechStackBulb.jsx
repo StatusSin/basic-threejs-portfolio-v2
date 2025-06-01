@@ -12,17 +12,16 @@ const TechStackBulb = ({ data }) => {
         stackLogo = [],
         blockedStart = 80,
         blockedEnd = 120,
+        satelliteDistance = 140,
     } = data;
 
     const blockedWidth = (blockedEnd - blockedStart + FULL_CIRCLE) % FULL_CIRCLE;
-
     const [open, setOpen] = useState(false);
 
     const satellites = useMemo(() => {
         const count = stack.length;
         if (!count) return [];
 
-        const radius = 110;
         const allowedSpan = FULL_CIRCLE - blockedWidth;
         const step = allowedSpan / count;
 
@@ -31,15 +30,11 @@ const TechStackBulb = ({ data }) => {
             if (angle >= blockedStart) angle += blockedWidth;
             angle %= FULL_CIRCLE;
 
-            const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(${radius}px) rotate(${-angle}deg)`;
+            const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(${satelliteDistance}px) rotate(${-angle}deg)`;
 
-            return {
-                label,
-                logo: stackLogo[idx],
-                transform,
-            };
+            return { label, logo: stackLogo[idx], transform };
         });
-    }, [stack, stackLogo, blockedStart, blockedWidth]);
+    }, [stack, stackLogo, blockedStart, blockedWidth, satelliteDistance]);
 
     return (
         <div className="relative flex-center w-80 h-80 select-none">
@@ -47,7 +42,7 @@ const TechStackBulb = ({ data }) => {
                 type="button"
                 aria-label={techStack}
                 onClick={() => setOpen(!open)}
-                className={`flex-col-center transition-colors duration-300 rounded-full w-52 h-52 md:w-60 md:h-60 border border-black-50 overflow-visible ${
+                className={`flex-col-center gap-2 transition-colors duration-300 rounded-full w-52 h-52 md:w-60 md:h-60 border border-black-50 overflow-visible ${
                     open ? "bg-white-50 text-black" : "bg-[#18181B] text-white-50"
                 }`}
                 style={{ boxShadow: open ? "0 0 20px rgba(217,236,255,.4)" : "none" }}
@@ -59,10 +54,9 @@ const TechStackBulb = ({ data }) => {
                         className="w-12 h-12 md:w-14 md:h-14 object-contain"
                     />
                 )}
-                <span className="font-semibold mt-2 md:mt-3 text-sm md:text-base uppercase tracking-wide">
+                <span className="font-semibold text-sm md:text-base uppercase tracking-wide text-center">
           {techStack}
         </span>
-                <span className="block mt-auto mb-4 text-xs opacity-0">.</span>
             </button>
 
             {satellites.map(({ label, logo, transform }, idx) => (

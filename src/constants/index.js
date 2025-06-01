@@ -204,6 +204,7 @@ const techStackBulb = [
             "/images/threejs.svg",
             "/images/css.svg",
         ],
+        satelliteDistance: 140,
         blockedStart: 80,
         blockedEnd: 130,
     },
@@ -228,11 +229,14 @@ const techStackBulb = [
             "/images/postgresql.svg",
             "/images/mongodb.svg",
         ],
+        satelliteDistance: 140,
         blockedStart: 80,
         blockedEnd: 130,
     },
     {
-        techStack: "Artificial Intelligence / Machine Learning",
+        techStack: [
+            "Artificial Intelligence", "Machine Learning", "Deep Learning",
+        ],
         imgPath: "/images/backend.svg",
         stack: [
             "Python",
@@ -252,6 +256,7 @@ const techStackBulb = [
             "/images/mlflow.svg",
             "/images/cuda.svg",
         ],
+        satelliteDistance: 140,
         blockedStart: 80,
         blockedEnd: 130,
     },

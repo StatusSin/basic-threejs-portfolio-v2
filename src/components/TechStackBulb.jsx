@@ -12,12 +12,17 @@ const TechStackBulb = ({ data }) => {
         stackLogo = [],
         blockedStart = 80,
         blockedEnd = 120,
-        satelliteDistance = 140,
+        satelliteDistance = 110,
     } = data;
+
+    const techStackLines = Array.isArray(techStack) ? techStack : [techStack];
+    const ariaLabel = Array.isArray(techStack)
+        ? techStack.join(", ")
+        : techStack;
 
     const blockedWidth = (blockedEnd - blockedStart + FULL_CIRCLE) % FULL_CIRCLE;
     const [open, setOpen] = useState(false);
-
+    
     const satellites = useMemo(() => {
         const count = stack.length;
         if (!count) return [];
@@ -40,7 +45,7 @@ const TechStackBulb = ({ data }) => {
         <div className="relative flex-center w-80 h-80 select-none">
             <button
                 type="button"
-                aria-label={techStack}
+                aria-label={ariaLabel}
                 onClick={() => setOpen(!open)}
                 className={`flex-col-center gap-2 transition-colors duration-300 rounded-full w-52 h-52 md:w-60 md:h-60 border border-black-50 overflow-visible ${
                     open ? "bg-white-50 text-black" : "bg-[#18181B] text-white-50"
@@ -50,13 +55,21 @@ const TechStackBulb = ({ data }) => {
                 {imgPath && (
                     <img
                         src={imgPath}
-                        alt={`${techStack} logo`}
+                        alt={ariaLabel + " logo"}
                         className="w-12 h-12 md:w-14 md:h-14 object-contain"
                     />
                 )}
-                <span className="font-semibold text-sm md:text-base uppercase tracking-wide text-center">
-          {techStack}
-        </span>
+
+                <div className="flex flex-col items-center leading-tight text-center">
+                    {techStackLines.map((line, idx) => (
+                        <span
+                            key={idx}
+                            className="font-semibold text-sm md:text-base uppercase tracking-wide"
+                        >
+              {line}
+            </span>
+                    ))}
+                </div>
             </button>
 
             {satellites.map(({ label, logo, transform }, idx) => (

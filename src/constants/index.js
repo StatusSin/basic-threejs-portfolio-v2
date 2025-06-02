@@ -185,8 +185,8 @@ const expCards = [
 const techStackBulb = [
     {
         techStack: "Machine Learning",
-        imgPathWhite: "/images/AILogoWhite.svg",
-        imgPathBlack: "/images/AILogoBlack.svg",
+        imgPathWhite: "/images/TechStackImages/AILogoWhite.svg",
+        imgPathBlack: "/images/TechStackImages/AILogoBlack.svg",
         stack: [
             "Python",
             "C, C++",
@@ -211,8 +211,8 @@ const techStackBulb = [
     },
     {
         techStack: "Frontend",
-        imgPathWhite: "/images/FrontendLogoWhite.svg",
-        imgPathBlack: "/images/FrontendLogoBlack.svg",
+        imgPathWhite: "/images/TechStackImages/FrontendLogoWhite.svg",
+        imgPathBlack: "/images/TechStackImages/FrontendLogoBlack.svg",
         stack: [
             "JavaScript",
             "HTML",
@@ -237,8 +237,8 @@ const techStackBulb = [
     },
     {
         techStack: "Backend",
-        imgPathWhite: "/images/BackendLogoWhite.svg",
-        imgPathBlack: "/images/BackendLogoBlack.svg",
+        imgPathWhite: "/images/TechStackImages/BackendLogoWhite.svg",
+        imgPathBlack: "/images/TechStackImages/BackendLogoBlack.svg",
         stack: [
             "Java",
             "Node.js",

@@ -42,7 +42,7 @@ const TechStackBulb = ({ data }) => {
     }, [stack, stackLogo, blockedStart, blockedWidth, satelliteDistance]);
 
     return (
-        <div className="relative flex-center w-80 h-80 select-none">
+        <div className="relative flex-center w-full h-100 select-none">
             <button
                 type="button"
                 aria-label={ariaLabel}

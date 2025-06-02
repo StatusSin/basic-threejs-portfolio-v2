@@ -184,8 +184,37 @@ const expCards = [
 
 const techStackBulb = [
     {
+        techStack: [
+            "Artificial Intelligence", "Machine Learning", "Deep Learning",
+        ],
+        imgPathWhite: "/images/AILogoWhite.svg",
+        imgPathBlack: "/images/AILogoBlack.svg",
+        stack: [
+            "Python",
+            "C, C++",
+            "PyTorch",
+            "Pandas",
+            "TensorFlow",
+            "MLFlow",
+            "Cuda",
+        ],
+        stackLogo: [
+            "/images/python.svg",
+            "/images/c.svg",
+            "/images/pytorch.svg",
+            "/images/pandas.svg",
+            "/images/tensorflow.svg",
+            "/images/mlflow.svg",
+            "/images/cuda.svg",
+        ],
+        satelliteDistance: 140,
+        blockedStart: 80,
+        blockedEnd: 130,
+    },
+    {
         techStack: "Frontend",
-        imgPath: "/images/frontend.svg",
+        imgPathWhite: "/images/FrontendLogoWhite.svg",
+        imgPathBlack: "/images/FrontendLogoBlack.svg",
         stack: [
             "JavaScript",
             "HTML",
@@ -210,7 +239,8 @@ const techStackBulb = [
     },
     {
         techStack: "Backend",
-        imgPath: "/images/backend.svg",
+        imgPathWhite: "/images/BackendLogoWhite.svg",
+        imgPathBlack: "/images/BackendLogoBlack.svg",
         stack: [
             "Java",
             "Node.js",
@@ -228,33 +258,6 @@ const techStackBulb = [
             "/images/mysql.svg",
             "/images/postgresql.svg",
             "/images/mongodb.svg",
-        ],
-        satelliteDistance: 140,
-        blockedStart: 80,
-        blockedEnd: 130,
-    },
-    {
-        techStack: [
-            "Artificial Intelligence", "Machine Learning", "Deep Learning",
-        ],
-        imgPath: "/images/backend.svg",
-        stack: [
-            "Python",
-            "C, C++",
-            "PyTorch",
-            "Pandas",
-            "TensorFlow",
-            "MLFlow",
-            "Cuda",
-        ],
-        stackLogo: [
-            "/images/python.svg",
-            "/images/c.svg",
-            "/images/pytorch.svg",
-            "/images/pandas.svg",
-            "/images/tensorflow.svg",
-            "/images/mlflow.svg",
-            "/images/cuda.svg",
         ],
         satelliteDistance: 140,
         blockedStart: 80,

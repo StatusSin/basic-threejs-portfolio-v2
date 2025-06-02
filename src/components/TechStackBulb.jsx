@@ -7,7 +7,8 @@ const TechStackBulb = ({ data }) => {
 
     const {
         techStack,
-        imgPath,
+        imgPathWhite,
+        imgPathBlack,
         stack = [],
         stackLogo = [],
         blockedStart = 80,
@@ -15,14 +16,18 @@ const TechStackBulb = ({ data }) => {
         satelliteDistance = 110,
     } = data;
 
+    // Handle both single string and string[] techStack props
     const techStackLines = Array.isArray(techStack) ? techStack : [techStack];
-    const ariaLabel = Array.isArray(techStack)
-        ? techStack.join(", ")
-        : techStack;
+    const ariaLabel = Array.isArray(techStack) ? techStack.join(", ") : techStack;
 
+    // Pre‑compute some geometry values
     const blockedWidth = (blockedEnd - blockedStart + FULL_CIRCLE) % FULL_CIRCLE;
     const [open, setOpen] = useState(false);
-    
+
+    // Choose the correct logo based on the open state
+    const currentImgPath = open ? imgPathBlack ?? imgPathWhite : imgPathWhite ?? imgPathBlack;
+
+    // Memoize satellite positions so they only recalc when deps change
     const satellites = useMemo(() => {
         const count = stack.length;
         if (!count) return [];
@@ -52,10 +57,10 @@ const TechStackBulb = ({ data }) => {
                 }`}
                 style={{ boxShadow: open ? "0 0 20px rgba(217,236,255,.4)" : "none" }}
             >
-                {imgPath && (
+                {currentImgPath && (
                     <img
-                        src={imgPath}
-                        alt={ariaLabel + " logo"}
+                        src={currentImgPath}
+                        alt={`${ariaLabel} logo`}
                         className="w-12 h-12 md:w-14 md:h-14 object-contain"
                     />
                 )}
@@ -66,8 +71,8 @@ const TechStackBulb = ({ data }) => {
                             key={idx}
                             className="font-semibold text-sm md:text-base uppercase tracking-wide"
                         >
-              {line}
-            </span>
+                            {line}
+                        </span>
                     ))}
                 </div>
             </button>
@@ -88,8 +93,8 @@ const TechStackBulb = ({ data }) => {
                         />
                     )}
                     <span className="text-[10px] md:text-xs font-medium mt-1 text-center px-1 leading-tight">
-            {label}
-          </span>
+                        {label}
+                    </span>
                 </div>
             ))}
         </div>

@@ -184,9 +184,7 @@ const expCards = [
 
 const techStackBulb = [
     {
-        techStack: [
-            "Artificial Intelligence", "Machine Learning", "Deep Learning",
-        ],
+        techStack: "Machine Learning",
         imgPathWhite: "/images/AILogoWhite.svg",
         imgPathBlack: "/images/AILogoBlack.svg",
         stack: [

@@ -102,7 +102,7 @@ const educationCards = [
         responsibilities: [
             "UIUC 1.",
             "UIUC 2.",
-            "UIUC 3.",
+            "UIUC 3.",a
         ],
     },
     {

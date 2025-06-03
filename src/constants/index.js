@@ -18,14 +18,14 @@ const navLinks = [
 ];
 
 const words = [
-    { text: "Ideas", imgPath: "/images/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/concepts.svg" },
-    { text: "Designs", imgPath: "/images/designs.svg" },
-    { text: "Code", imgPath: "/images/code.svg" },
-    { text: "Ideas", imgPath: "/images/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/concepts.svg" },
-    { text: "Designs", imgPath: "/images/designs.svg" },
-    { text: "Code", imgPath: "/images/code.svg" },
+    { text: "Ideas", imgPath: "/images/HeroImages/ideas.svg" },
+    { text: "Concepts", imgPath: "/images/HeroImages/concepts.svg" },
+    { text: "Designs", imgPath: "/images/HeroImages/designs.svg" },
+    { text: "Code", imgPath: "/images/HeroImages/code.svg" },
+    { text: "Ideas", imgPath: "/images/HeroImages/ideas.svg" },
+    { text: "Concepts", imgPath: "/images/HeroImages/concepts.svg" },
+    { text: "Designs", imgPath: "/images/HeroImages/designs.svg" },
+    { text: "Code", imgPath: "/images/HeroImages/code.svg" },
 ];
 
 const counterItems = [
@@ -73,17 +73,17 @@ const logoIconsList = [
 
 const abilities = [
     {
-        imgPath: "/images/seo.png",
+        imgPath: "/images/AbilitiesImages/seo.png",
         title: "Quality Focus",
         desc: "Developing high-quality work while maintaining attention to every detail.",
     },
     {
-        imgPath: "/images/chat.png",
+        imgPath: "/images/AbilitiesImages/chat.png",
         title: "Reliable Communication",
         desc: "Keeping transparency and clarity the forefront of project workflow.",
     },
     {
-        imgPath: "/images/time.png",
+        imgPath: "/images/AbilitiesImages/time.png",
         title: "On-Time Delivery",
         desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
     },
@@ -92,8 +92,8 @@ const abilities = [
 const educationCards = [
     {
         gpa: "GPA: ",
-        imgPath: "/images/UIUC-full.png",
-        logoPath: "/images/UIUCLogo.svg",
+        imgPath: "/images/EducationImages/UIUC-full.png",
+        logoPath: "/images/EducationImages/UIUCLogo.svg",
         logoSize: 65,
         title: "University of Illinois Urbana-Champaign",
         subtitle: "Master of Science in Computer Science",
@@ -107,8 +107,8 @@ const educationCards = [
     },
     {
         gpa: "GPA: 3.94 / 4.0",
-        imgPath: "/images/LMU-full.png",
-        logoPath: "/images/LMULogo.svg",
+        imgPath: "/images/EducationImages/LMU-full.png",
+        logoPath: "/images/EducationImages/LMULogo.svg",
         logoSize: 68,
         title: "Loyola Marymount University",
         subtitle: "Bachelor of Science in Computer Science",
@@ -126,8 +126,8 @@ const expCards = [
     {
         location:
             "Santa Monica, CA",
-        imgPath: "/images/CodeRevKids-full.png",
-        logoPath: "/images/CodeRevKidsLogo.png",
+        imgPath: "/images/ExperienceImages/CodeRevKids-full.png",
+        logoPath: "/images/ExperienceImages/CodeRevKidsLogo.png",
         logoSize: 70,
         title: "Coding Instructor",
         date: "July 2022 - August 2023",
@@ -140,8 +140,8 @@ const expCards = [
     {
         location:
             "Burbank, CA",
-        imgPath: "/images/GothamCityLA-full.png",
-        logoPath: "/images/GothamCityLALogo.png",
+        imgPath: "/images/ExperienceImages/GothamCityLA-full.png",
+        logoPath: "/images/ExperienceImages/GothamCityLALogo.png",
         logoSize: 70,
         title: "Full Stack Engineer (contract)",
         date: "June 2022 - July 2022",
@@ -155,8 +155,8 @@ const expCards = [
     {
         location:
             "Remote",
-        imgPath: "/images/EA-full.png",
-        logoPath: "/images/EALogo.png",
+        imgPath: "/images/ExperienceImages/EA-full.png",
+        logoPath: "/images/ExperienceImages/EALogo.png",
         logoSize: 70,
         title: "Software Engineer Intern",
         date: "August 2021 - December 2021",
@@ -169,8 +169,8 @@ const expCards = [
     {
         location:
             "Remote",
-        imgPath: "/images/inhabitr-full.png",
-        logoPath: "/images/inhabitrLogo.png",
+        imgPath: "/images/ExperienceImages/inhabitr-full.png",
+        logoPath: "/images/ExperienceImages/inhabitrLogo.png",
         logoSize: 58,
         title: "Software Engineer Intern",
         date: "June 2021 - August 2021",

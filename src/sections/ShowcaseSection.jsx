@@ -42,7 +42,7 @@ const ShowcaseSection = () => {
                     {/* LEFT: MAIN PROJECT */}
                     <div className = "first-project-wrapper" ref = {project1Ref}>
                         <div className = "image-wrapper">
-                            <img src = "/images/project1.png" alt = "Ryde" />
+                            <img src = "/images/ShowcaseImages/project1.png" alt = "Ryde" />
                         </div>
                         <div className = "text-content">
                             <h2>On-Demand Rides Made Simple with a Powerful, User Friendly App Called Ryde</h2>
@@ -54,14 +54,14 @@ const ShowcaseSection = () => {
                     <div className = "project-list-wrapper overflow-hidden">
                         <div className = "project" ref = {project2Ref}>
                             <div className = "image-wrapper bg-[#ffefdb]">
-                                <img src = "/images/project2.png" alt = "Library Management Platform" />
+                                <img src = "/images/ShowcaseImages/project2.png" alt = "Library Management Platform" />
                             </div>
                             <h2>Library Management Platform</h2>
                         </div>
 
                         <div className = "project" ref = {project3Ref}>
                             <div className = "image-wrapper bg-[#ffe7eb]">
-                                <img src = "/images/project3.png" alt = "YC Directory - A Startup Showcase App" />
+                                <img src = "/images/ShowcaseImages/project3.png" alt = "YC Directory - A Startup Showcase App" />
                             </div>
                             <h2>YC Directory - A Startup Showcase App</h2>
                         </div>

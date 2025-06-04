@@ -206,8 +206,6 @@ const techStackBulb = [
             "/images/TechStackImages/CudaLogo.svg",
         ],
         satelliteDistance: 140,
-        blockedStart: 80,
-        blockedEnd: 130,
     },
     {
         techStack: "Frontend",
@@ -232,8 +230,6 @@ const techStackBulb = [
             "/images/TechStackImages/CSSLogo.svg",
         ],
         satelliteDistance: 140,
-        blockedStart: 80,
-        blockedEnd: 130,
     },
     {
         techStack: "Backend",
@@ -258,8 +254,6 @@ const techStackBulb = [
             "/images/TechStackImages/MongoDBLogo.svg",
         ],
         satelliteDistance: 140,
-        blockedStart: 80,
-        blockedEnd: 130,
     },
 ];
 

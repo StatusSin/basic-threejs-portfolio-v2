@@ -4,7 +4,7 @@ const ProjectPointer = ({ label = 'Projects', onClick }) => {
             type="button"
             onClick={onClick}
             className="
-                mt-4 px-5 py-2
+                mt-4 px-5 py-3
                 rounded-lg
                 bg-[#18181B] text-white-50
                 text-sm md:text-base font-medium

@@ -45,7 +45,7 @@ const ShowcaseSection = () => {
                             <img src = "/images/ShowcaseImages/project1.png" alt = "Ryde" />
                         </div>
                         <div className = "text-content">
-                            <h2>On-Demand Rides Made Simple with a Powerful, User Friendly PortfolioMain Called Ryde</h2>
+                            <h2>On-Demand Rides Made Simple with a Powerful, User Friendly PortfolioHome Called Ryde</h2>
                             <p className = "text-whitw-50 md:text-xl">An app built with React Native, Expo, & TailwindCSS for a fast, user friendly experience.</p>
                         </div>
                     </div>
@@ -61,9 +61,9 @@ const ShowcaseSection = () => {
 
                         <div className = "project" ref = {project3Ref}>
                             <div className = "image-wrapper bg-[#ffe7eb]">
-                                <img src = "/images/ShowcaseImages/project3.png" alt = "YC Directory - A Startup Showcase PortfolioMain" />
+                                <img src = "/images/ShowcaseImages/project3.png" alt = "YC Directory - A Startup Showcase PortfolioHome" />
                             </div>
-                            <h2>YC Directory - A Startup Showcase PortfolioMain</h2>
+                            <h2>YC Directory - A Startup Showcase PortfolioHome</h2>
                         </div>
                     </div>
 

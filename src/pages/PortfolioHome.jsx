@@ -6,7 +6,7 @@ import FeatureCards from "../sections/FeatureCards.jsx";
 import ExperienceSection from "../sections/ExperienceSection.jsx";
 import TechStacks from "../sections/TechStacks.jsx";
 
-const PortfolioMain = () => {
+const PortfolioHome = () => {
     return (
         <>
             <NavBar />
@@ -19,4 +19,4 @@ const PortfolioMain = () => {
         </>
     )
 }
-export default PortfolioMain
+export default PortfolioHome

@@ -20,6 +20,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.1.0",
     "react-responsive": "^10.0.1",
+    "react-router-dom": "^7.6.2",
     "tailwindcss": "^4.1.6",
     "three": "^0.176.0"
   },

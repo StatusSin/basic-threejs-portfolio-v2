@@ -14,7 +14,7 @@ const TechStacks = () => (
             {techStacksData.map((bulb, idx) => (
                 <div key={idx} className="bg-[#0E0E10] rounded-3xl flex flex-col items-center justify-center p-6">
                     <TechStackBulb data={bulb} />
-                    <ProjectPointer />
+                    <ProjectPointer target = {bulb.projectRoute} />
                 </div>
             ))}
         </div>

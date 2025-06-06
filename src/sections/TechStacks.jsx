@@ -12,9 +12,17 @@ const TechStacks = () => (
 
         <div className="grid-3-cols gap-6 w-full mx-auto mt-20">
             {techStacksData.map((bulb, idx) => (
-                <div key={idx} className="bg-[#0E0E10] rounded-3xl flex flex-col items-center justify-center p-6">
+                <div
+                    key={idx}
+                    className="bg-[#0E0E10] rounded-3xl flex flex-col items-center justify-center p-6"
+                >
                     <TechStackBulb data={bulb} />
-                    <ProjectPointer target = {bulb.projectRoute} />
+
+                    {/* NEW: point to the route defined in index.js */}
+                    <ProjectPointer
+                        label={`${bulb.techStack} Projects`}
+                        target={bulb.projectRoute}
+                    />
                 </div>
             ))}
         </div>

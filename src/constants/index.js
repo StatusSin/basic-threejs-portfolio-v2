@@ -206,7 +206,7 @@ const techStackBulb = [
             "/images/TechStackImages/CudaLogo.svg",
         ],
         satelliteDistance: 140,
-        projectRoute: "/projects/machine-learning",
+        projectRoute: "/MachineLearningProjects",
     },
     {
         techStack: "Frontend",
@@ -231,7 +231,7 @@ const techStackBulb = [
             "/images/TechStackImages/CSSLogo.svg",
         ],
         satelliteDistance: 140,
-        projectRoute: "/projects/frontend",
+        projectRoute: "/FrontendProjects",
     },
     {
         techStack: "Backend",
@@ -256,7 +256,7 @@ const techStackBulb = [
             "/images/TechStackImages/MongoDBLogo.svg",
         ],
         satelliteDistance: 140,
-        projectRoute: "/projects/backend",
+        projectRoute: "/BackendProjects",
     },
 ];
 

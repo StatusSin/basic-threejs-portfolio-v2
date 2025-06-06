@@ -206,6 +206,9 @@ const techStackBulb = [
             "/images/TechStackImages/CudaLogo.svg",
         ],
         satelliteDistance: 140,
+        centreDiameter: 270,   // px – overall button size   (default 192)
+        logoSize: 100,          // px – logo inside button    (defaults to 0.42 × diameter)
+        fontSize: 20,
         projectRoute: "/MachineLearningProjects",
     },
     {
@@ -231,6 +234,9 @@ const techStackBulb = [
             "/images/TechStackImages/CSSLogo.svg",
         ],
         satelliteDistance: 140,
+        centreDiameter: 270,   // px – overall button size   (default 192)
+        logoSize: 100,          // px – logo inside button    (defaults to 0.42 × diameter)
+        fontSize: 20,
         projectRoute: "/FrontendProjects",
     },
     {
@@ -256,6 +262,9 @@ const techStackBulb = [
             "/images/TechStackImages/MongoDBLogo.svg",
         ],
         satelliteDistance: 140,
+        centreDiameter: 270,   // px – overall button size   (default 192)
+        logoSize: 100,          // px – logo inside button    (defaults to 0.42 × diameter)
+        fontSize: 20,
         projectRoute: "/BackendProjects",
     },
 ];

@@ -1,88 +1,127 @@
-import React, { useState, useMemo } from 'react';
-
-const FULL_CIRCLE = 360;
+import React, { useState, useRef, useEffect } from "react";
+import clsx from "clsx";
+import { gsap } from "gsap";
 
 const TechStackBulb = ({ data }) => {
-    if (!data) return null;
-
     const {
         techStack,
         imgPathWhite,
         imgPathBlack,
-        stack = [],
-        stackLogo = [],
-        satelliteDistance = 110,
+        stack,
+        stackLogo,
+        satelliteDistance = 160,
+        centreDiameter = 192,
+        logoSize = Math.round(centreDiameter * 0.42),
+        fontSize = Math.round(centreDiameter * 0.083),
     } = data;
 
-    // Handle both string and string[] for techStack
-    const techStackLines = Array.isArray(techStack) ? techStack : [techStack];
-    const ariaLabel = techStackLines.join(', ');
+    const [isOpen, setIsOpen] = useState(false);
+    const [showSats, setShowSats] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
-    const [open, setOpen] = useState(false);
+    const satRefs = useRef([]);
+    satRefs.current = [];
+    const addSatRef = (el) => {
+        if (el && !satRefs.current.includes(el)) satRefs.current.push(el);
+    };
 
-    // Pick the correct logo based on the open/closed state
-    const currentImgPath = open ? (imgPathBlack ?? imgPathWhite) : (imgPathWhite ?? imgPathBlack);
+    const animateIn = () => {
+        gsap.killTweensOf(satRefs.current);
+        gsap.fromTo(
+            satRefs.current,
+            { scale: 0, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.45,
+                stagger: 0.06,
+                ease: "back.out(1.7)",
+            }
+        );
+    };
 
-    // Compute satellite positions evenly around the centre
-    const satellites = useMemo(() => {
-        const count = stack.length;
-        if (!count) return [];
-
-        const step = FULL_CIRCLE / count;
-
-        return stack.map((label, idx) => {
-            const angle = idx * step;
-            const transform = `translate(-50%, -50%) rotate(${angle}deg) translate(${satelliteDistance}px) rotate(${-angle}deg)`;
-            return { label, logo: stackLogo[idx], transform };
+    const animateOut = () => {
+        gsap.killTweensOf(satRefs.current);
+        gsap.to(satRefs.current, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.35,
+            stagger: 0.05,
+            ease: "back.in(1.7)",
+            onComplete: () => setShowSats(false),
         });
-    }, [stack, stackLogo, satelliteDistance]);
+    };
+
+    const handleToggle = () => {
+        if (isOpen) {
+            setIsOpen(false);
+            animateOut();
+        } else {
+            setShowSats(true);
+            setIsOpen(true);
+        }
+    };
+
+    useEffect(() => {
+        if (isOpen) animateIn();
+    }, [isOpen]);
+
+    const centreBtnClasses = clsx(
+        "relative flex flex-col items-center justify-center rounded-full select-none transition-all duration-300 z-0",
+        isOpen ? "bg-white text-black" : "bg-[#18181B] text-white/80",
+        !isOpen && isHover && "scale-105 ring-2 ring-white/40"
+    );
+
+    const centreLogo = isOpen ? imgPathBlack : imgPathWhite;
+
+    const sats =
+        showSats &&
+        stack.map((label, idx) => {
+            const angle = (360 / stack.length) * idx;
+            const rad = (angle * Math.PI) / 180;
+            const x = satelliteDistance * Math.cos(rad);
+            const y = satelliteDistance * Math.sin(rad);
+
+            return (
+                <div
+                    key={label}
+                    ref={addSatRef}
+                    className="absolute z-10 pointer-events-none select-none"
+                    style={{ transform: `translate(${x}px, ${y}px)` }}
+                >
+                    <div className="flex flex-col items-center justify-center w-18 h-18 rounded-full bg-white shadow-md">
+                        <img src={stackLogo[idx]} alt={label} className="w-7 h-7 mb-0.5" />
+                        <span className="text-[10px] font-bold leading-none text-black text-center">
+              {label}
+            </span>
+                    </div>
+                </div>
+            );
+        });
 
     return (
-        <div className='relative flex-center w-full h-100 select-none'>
-            <button
-                type='button'
-                aria-label={ariaLabel}
-                onClick={() => setOpen(prev => !prev)}
-                className={`flex-col-center gap-2 transition-colors duration-300 rounded-full w-52 h-52 md:w-60 md:h-60 border border-black-50 overflow-visible ${open ? 'bg-white-50 text-black' : 'bg-[#18181B] text-white-50'}`}
-                style={{ boxShadow: open ? '0 0 20px rgba(217,236,255,.4)' : 'none' }}
-            >
-                {currentImgPath && (
-                    <img
-                        src={currentImgPath}
-                        alt={`${ariaLabel} logo`}
-                        className='w-12 h-12 md:w-14 md:h-14 object-contain'
-                    />
-                )}
-                <div className='flex flex-col items-center leading-tight text-center'>
-                    {techStackLines.map((line, idx) => (
-                        <span
-                            key={idx}
-                            className='font-semibold text-sm md:text-base uppercase tracking-wide'
-                        >
-                            {line}
-                        </span>
-                    ))}
-                </div>
-            </button>
+        <div className="relative flex items-center justify-center py-10">
+            {sats}
 
-            {satellites.map(({ label, logo, transform }, idx) => (
-                <div
-                    key={idx}
-                    className={`absolute top-1/2 left-1/2 w-20 h-20 md:w-24 md:h-24 rounded-full flex-col-center bg-white-50 text-black transition-opacity duration-500 ${open ? 'opacity-100 delay-100' : 'opacity-0 pointer-events-none'}`}
-                    style={{ transform }}
+            <div
+                onClick={handleToggle}
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+                className={centreBtnClasses}
+                style={{ width: centreDiameter, height: centreDiameter }}
+            >
+                <img
+                    src={centreLogo}
+                    alt={`${techStack} logo`}
+                    style={{ width: logoSize, height: logoSize }}
+                />
+                <span
+                    className="font-medium text-center"
+                    style={{ marginTop: Math.round(centreDiameter * 0.083), fontSize: fontSize }}
                 >
-                    {logo && (
-                        <img
-                            src={logo}
-                            alt={`${label} logo`}
-                            className='w-8 h-8 md:w-10 md:h-10 object-contain'
-                        />
-                    )}
-                    <span className='text-[10px] md:text-xs font-medium mt-1 text-center px-1 leading-tight'>
-                        {label}
-                    </span>
-                </div>
-            ))}
+          {techStack}
+        </span>
+            </div>
         </div>
     );
 };

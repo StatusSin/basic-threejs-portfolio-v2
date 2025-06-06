@@ -7,12 +7,14 @@ import './index.css'
 
 // Pages
 import PortfolioHome from './pages/PortfolioHome.jsx'
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 import MachineLearningProjects from "./pages/projects/MachineLearningProjects.jsx";
 import BackendProjects from "./pages/projects/BackendProjects.jsx";
 import FrontendProjects from "./pages/projects/FrontendProjects.jsx";
 
 const router = createBrowserRouter([
     { path: "/", element: <PortfolioHome /> },
+    { path: "*", element: <NotFoundPage /> },
     { path: "/MachineLearningProjects", element: <MachineLearningProjects /> },
     { path: "/BackendProjects", element: <BackendProjects /> },
     { path: "/FrontendProjects", element: <FrontendProjects /> },

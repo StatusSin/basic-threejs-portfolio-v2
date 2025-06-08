@@ -117,7 +117,7 @@ const Main = () => {
 
     return (
         <section
-            id="hero"
+            id="home"
             ref={containerRef}
             className="relative w-full h-screen overflow-hidden bg-transparent z-50"
         >

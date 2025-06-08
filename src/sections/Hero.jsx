@@ -26,6 +26,8 @@ const Main = () => {
     const nameRef = useRef(null);
     const taglineRef = useRef(null);
 
+    const ARC_SCROLL_FACTOR = 1;
+
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const mm = gsap.matchMedia();
@@ -60,7 +62,7 @@ const Main = () => {
                     scrollTrigger: {
                         trigger: containerRef.current,
                         start: "top top",
-                        end: () => `+=${vh}`,
+                        end: () => `+=${vh * ARC_SCROLL_FACTOR}`,  // ← now driven by the variable
                         scrub: true,
                         pin: true,
                         invalidateOnRefresh: true,

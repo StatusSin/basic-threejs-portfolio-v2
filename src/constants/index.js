@@ -80,7 +80,7 @@ const abilities = [
 
 const educationCards = [
     {
-        gpa: "GPA: 4.0 / 4.0",
+        gpa: "GPA: ",
         imgPath: "/images/EducationImages/UIUC-full.png",
         logoPath: "/images/EducationImages/UIUCLogo.svg",
         background: "/images/EducationImages/UIUCGradient.png",

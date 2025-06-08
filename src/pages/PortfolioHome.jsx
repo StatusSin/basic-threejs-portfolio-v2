@@ -11,9 +11,9 @@ const PortfolioHome = () => {
             <NavBar />
             <Hero />
             <ExperienceSection />
+            <TechStacks />
             <ShowcaseSection />
             <LogoSection />
-            <TechStacks />
         </>
     )
 }

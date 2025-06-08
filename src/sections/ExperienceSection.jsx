@@ -34,6 +34,21 @@ const Experience = () => {
             },
         });
 
+        /* ---------------- Sub-titles (Education / Experience) ---------------- */
+        gsap.utils.toArray(".section-heading").forEach((el, i) => {
+            gsap.from(el, {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                delay: i * 0.1,
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 70%",
+                },
+            });
+        });
+
         /* Card reveal animation */
         gsap.utils.toArray(".timeline-card").forEach((card) => {
             gsap.from(card, {
@@ -118,7 +133,7 @@ const Experience = () => {
                                     />
                                 </div>
                                 <div>
-                                    <h1 className="font-semibold text-3xl">{card.title}</h1>
+                                    <h1 className="font-semibold text-3xl text-white-50">{card.title}</h1>
                                     <p className="font-semibold text-xl text-[#839CB5]">{card.subtitle}</p>
                                     <p className="my-5 text-white-50">{card.date}</p>
                                     <p className="text-[#839CB5] italic">Highlights</p>
@@ -148,13 +163,14 @@ const Experience = () => {
 
                 {/* ---------- Education ---------- */}
                 <div className="education-section mt-32 relative">
-                    <h2 className="font-semibold text-4xl mb-10">Education</h2>
+                    <h2 className="section-heading font-semibold text-4xl mb-10 text-white-50">Education</h2>
                     {renderCards(educationCards, "timeline-edu", eduGradient)}
                 </div>
 
+
                 {/* ---------- Professional Experience ---------- */}
                 <div className="experience-section mt-32 relative">
-                    <h2 className="font-semibold text-4xl mb-10">Professional Experience</h2>
+                    <h2 className="section-heading font-semibold text-4xl mb-10">Professional Experience</h2>
                     {renderCards(expCards, "timeline-exp", expGradient)}
                 </div>
             </div>

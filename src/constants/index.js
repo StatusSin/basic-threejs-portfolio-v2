@@ -17,13 +17,6 @@ const navLinks = [
     },
 ];
 
-const counterItems = [
-    { value: 7, suffix: "+", label: "Years of Experience" },
-    { value: 50, suffix: "+", label: "Completed Projects" },
-    { value: 2, suffix: "", label: "Certificates" },
-    { value: 30, suffix: "+", label: "Languages" },
-];
-
 const logoIconsList = [
     {
         imgPath: "/images/LogosImages/company-logo-1.png",
@@ -57,24 +50,6 @@ const logoIconsList = [
     },
     {
         imgPath: "/images/LogosImages/company-logo-11.png",
-    },
-];
-
-const abilities = [
-    {
-        imgPath: "/images/AbilitiesImages/seo.png",
-        title: "Quality Focus",
-        desc: "Developing high-quality work while maintaining attention to every detail.",
-    },
-    {
-        imgPath: "/images/AbilitiesImages/chat.png",
-        title: "Reliable Communication",
-        desc: "Keeping transparency and clarity the forefront of project workflow.",
-    },
-    {
-        imgPath: "/images/AbilitiesImages/time.png",
-        title: "On-Time Delivery",
-        desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
     },
 ];
 
@@ -303,37 +278,11 @@ const techStackModels = [
     },
 ];
 
-const socialImgs = [
-    {
-        name: "insta",
-        url: "https://www.instagram.com/",
-        imgPath: "/images/insta.png",
-    },
-    {
-        name: "fb",
-        url: "https://www.facebook.com/",
-        imgPath: "/images/fb.png",
-    },
-    {
-        name: "x",
-        url: "https://www.x.com/",
-        imgPath: "/images/x.png",
-    },
-    {
-        name: "linkedin",
-        url: "https://www.linkedin.com/",
-        imgPath: "/images/linkedin.png",
-    },
-];
-
 export {
     navLinks,
-    counterItems,
     logoIconsList,
-    abilities,
     educationCards,
     expCards,
     techStackBulb,
     techStackModels,
-    socialImgs,
 };

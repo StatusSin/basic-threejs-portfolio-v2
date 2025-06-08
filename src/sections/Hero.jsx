@@ -117,12 +117,12 @@ const Main = () => {
 
     return (
         <section
-            id="main-animation"
+            id="hero"
             ref={containerRef}
             className="relative w-full h-screen overflow-hidden bg-transparent z-50"
         >
             {/* Centered intro text */}
-            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none select-none text-white">
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none select-none text-white-50">
                 <h1
                     ref={nameRef}
                     className="text-4xl md:text-6xl font-bold leading-tight"

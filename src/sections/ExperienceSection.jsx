@@ -22,6 +22,18 @@ const expGradient = getTimelineGradient(expCards);
 
 const Experience = () => {
     useGSAP(() => {
+        /* ---------------- TitleHeader fade / slide‑in ---------------- */
+        gsap.from(".title-header", {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".title-header",
+                start: "top 60%",
+            },
+        });
+
         /* Card reveal animation */
         gsap.utils.toArray(".timeline-card").forEach((card) => {
             gsap.from(card, {
@@ -89,7 +101,7 @@ const Experience = () => {
                             {/* Timeline */}
                             <div className="timeline-wrapper">
                                 <div className={`timeline ${timelineClass}`} />
-                                <div className="gradient-line w-1 h-full" style = {{ background: gradient }}/>
+                                <div className="gradient-line w-1 h-full" style={{ background: gradient }} />
                             </div>
 
                             {/* Text */}
@@ -98,11 +110,11 @@ const Experience = () => {
                                     <img
                                         src={card.logoPath}
                                         alt="logo"
-                                        style = {{
+                                        style={{
                                             width: card.logoSize ?? 48,
                                             height: card.logoSize ?? 48,
                                         }}
-                                        className = "object-contain"
+                                        className="object-contain"
                                     />
                                 </div>
                                 <div>
@@ -129,7 +141,10 @@ const Experience = () => {
     return (
         <section id="experience" className="flex-center md:mt-40 mt-20 section-padding xl:px-0">
             <div className="w-full h-full md:px-20 px-5">
-                <TitleHeader title="Education and Experience" sub="My Career Overview" />
+                {/* TitleHeader wrapped for animation */}
+                <div className="title-header w-full flex justify-center">
+                    <TitleHeader title="Education and Experience" sub="My Career Overview" />
+                </div>
 
                 {/* ---------- Education ---------- */}
                 <div className="education-section mt-32 relative">

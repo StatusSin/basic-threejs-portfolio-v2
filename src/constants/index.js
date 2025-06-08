@@ -17,17 +17,6 @@ const navLinks = [
     },
 ];
 
-const words = [
-    { text: "Ideas", imgPath: "/images/HeroImages/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/HeroImages/concepts.svg" },
-    { text: "Designs", imgPath: "/images/HeroImages/designs.svg" },
-    { text: "Code", imgPath: "/images/HeroImages/code.svg" },
-    { text: "Ideas", imgPath: "/images/HeroImages/ideas.svg" },
-    { text: "Concepts", imgPath: "/images/HeroImages/concepts.svg" },
-    { text: "Designs", imgPath: "/images/HeroImages/designs.svg" },
-    { text: "Code", imgPath: "/images/HeroImages/code.svg" },
-];
-
 const counterItems = [
     { value: 7, suffix: "+", label: "Years of Experience" },
     { value: 50, suffix: "+", label: "Completed Projects" },
@@ -327,7 +316,6 @@ const socialImgs = [
 
 export {
     navLinks,
-    words,
     counterItems,
     logoIconsList,
     abilities,

@@ -143,7 +143,7 @@ const Experience = () => {
             <div className="w-full h-full md:px-20 px-5">
                 {/* TitleHeader wrapped for animation */}
                 <div className="title-header w-full flex justify-center">
-                    <TitleHeader title="Education and Experience" sub="My Career Overview" />
+                    <TitleHeader title="Education and Experience" />
                 </div>
 
                 {/* ---------- Education ---------- */}

@@ -47,6 +47,11 @@ const Contact = ({
                     href={`mailto:${email}`}
                     className="flex items-center gap-2 hover:underline"
                 >
+                    <img
+                        src="/images/ContactImages/GmailLogo.svg" // ← add a MailLogo.svg there
+                        alt="Mail logo"
+                        className="w-6 h-6"
+                    />
                     <span>Email</span>
                 </a>
             </div>

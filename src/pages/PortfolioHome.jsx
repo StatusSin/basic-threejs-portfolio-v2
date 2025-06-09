@@ -10,8 +10,8 @@ const PortfolioHome = () => {
             <NavBar />
             <Hero />
             <ExperienceSection />
-            <TechStacks />
             <LogoSection />
+            <TechStacks />
         </>
     )
 }

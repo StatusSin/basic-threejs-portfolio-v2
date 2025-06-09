@@ -4,6 +4,7 @@ import LogoSection from "../sections/LogoSection.jsx";
 import ExperienceSection from "../sections/ExperienceSection.jsx";
 import TechStacks from "../sections/TechStacks.jsx";
 import Contact from "../sections/Contact.jsx";
+import BottomSpacing from "../sections/BottomSpacing.jsx";
 
 const PortfolioHome = () => {
     return (
@@ -14,6 +15,7 @@ const PortfolioHome = () => {
             <LogoSection />
             <TechStacks />
             <Contact />
+            <BottomSpacing />
         </>
     )
 }

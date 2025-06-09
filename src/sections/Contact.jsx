@@ -11,7 +11,7 @@ const Contact = ({
             <TitleHeader title="Contact" />
 
             {/* Links */}
-            <div className="flex items-center gap-8 mt-4">
+            <div className="flex items-center gap-8 mt-10">
                 {/* LinkedIn */}
                 <a
                     href={linkedInUrl}

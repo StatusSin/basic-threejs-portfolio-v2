@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar.jsx";
 import LogoSection from "../sections/LogoSection.jsx";
 import ExperienceSection from "../sections/ExperienceSection.jsx";
 import TechStacks from "../sections/TechStacks.jsx";
+import Contact from "../sections/Contact.jsx";
 
 const PortfolioHome = () => {
     return (
@@ -12,6 +13,7 @@ const PortfolioHome = () => {
             <ExperienceSection />
             <LogoSection />
             <TechStacks />
+            <Contact />
         </>
     )
 }

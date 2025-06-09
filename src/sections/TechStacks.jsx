@@ -5,7 +5,7 @@ import TitleHeader from "../components/TitleHeader.jsx";
 import ProjectPointer from "../components/ProjectPointer.jsx";
 
 const TechStacks = () => (
-    <section id="tech-stacks" className="section-padding">
+    <section id="skills" className="section-padding">
         <div className="w-full h-full md:px-20 px-5">
             <TitleHeader title="My Tech Stacks" />
         </div>

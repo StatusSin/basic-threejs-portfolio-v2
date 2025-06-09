@@ -48,7 +48,7 @@ const Contact = ({
                     className="flex items-center gap-2 hover:underline"
                 >
                     <img
-                        src="/images/ContactImages/GmailLogo.svg" // ← add a MailLogo.svg there
+                        src="/images/ContactImages/GmailLogo.svg"
                         alt="Mail logo"
                         className="w-6 h-6"
                     />

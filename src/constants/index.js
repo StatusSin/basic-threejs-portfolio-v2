@@ -55,7 +55,7 @@ const educationCards = [
         logoSize: 65,
         title: "University of Illinois Urbana-Champaign",
         subtitle: "Master of Science in Computer Science",
-        date: "August 2025 - Present",
+        date: "August 2025 - Flexible",
         timelineColor: "#ff6210",
         responsibilities: [
             "Coursework begins in August",

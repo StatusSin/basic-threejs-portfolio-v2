@@ -58,9 +58,9 @@ const educationCards = [
         date: "August 2025 - Present",
         timelineColor: "#ff6210",
         responsibilities: [
-            "Investigated and found appropriate methods to represent the source code, test suite, and relevant program properties for consumption by ML algorithms for a specific problems. Generated an appropriate dataset to train the ML models. Evaluated the proposed methods on real-world programs and analyze the result.",
-            "UIUC 2.",
-            "UIUC 3.",
+            "Coursework begins in August",
+            "I will be focusing on Machine Learning and Data Science.",
+            "My graduate education is flexible and I am open to work opportunities which Urbana supports alongside my educate through potential remote courses and asynchronous work options.",
         ],
     },
     {

@@ -1,8 +1,24 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom";
 
-const MachineLearningProjects = () => {
+const BackendProjects = () => {
     return (
-        <div>MachineLearningProjects</div>
-    )
-}
-export default MachineLearningProjects
+        <section className="flex flex-col items-center justify-center min-h-screen w-full text-center space-y-2">
+            <h2 className="text-3xl font-bold text-white">
+                Machine Learning Projects Coming Soon
+            </h2>
+
+            <p className="text-gray-400">
+                I have almost finished coding this part of the webpage to add my machine learning projects.
+            </p>
+            <Link
+                to="/"
+                className="mt-6 inline-block rounded-full bg-white px-6 py-2 text-base font-semibold text-black transition hover:scale-105 focus-visible:outline-none focus-visible:ring focus-visible:ring-white/50"
+            >
+                Take me home
+            </Link>
+        </section>
+    );
+};
+
+export default BackendProjects;

@@ -60,7 +60,7 @@ const educationCards = [
         responsibilities: [
             "Coursework begins in August",
             "I will be focusing on Machine Learning and Data Science.",
-            "My graduate education is flexible and I am open to work opportunities which Urbana supports alongside my educate through potential remote courses and asynchronous work options.",
+            "My graduate education is flexible and I am open to work opportunities which Urbana supports alongside my education through potential remote courses and asynchronous work options.",
         ],
     },
     {
